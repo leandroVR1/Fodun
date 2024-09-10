@@ -143,3 +143,4 @@
 /home/hackaton/Documents/Fodun/bin/Debug/net8.0/BouncyCastle.Cryptography.dll
 /home/hackaton/Documents/Fodun/bin/Debug/net8.0/MailKit.dll
 /home/hackaton/Documents/Fodun/bin/Debug/net8.0/MimeKit.dll
+/home/hackaton/Documents/Fodun/obj/Debug/net8.0/Fodun.sourcelink.json

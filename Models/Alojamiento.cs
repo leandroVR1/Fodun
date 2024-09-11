@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Fodun.Models
 {
@@ -13,7 +10,13 @@ namespace Fodun.Models
         public int CapacidadMaxima { get; set; }
         public int NumeroHabitaciones { get; set; }
         public string Descripcion { get; set; }
+
         public Sede Sede { get; set; }
+        public ICollection<Disponibilidad> Disponibilidades { get; set; }
+        public ICollection<Reserva> Reservas { get; set; }
+
         
+        public ICollection<Tarifa> Tarifas { get; set; }
     }
+
 }

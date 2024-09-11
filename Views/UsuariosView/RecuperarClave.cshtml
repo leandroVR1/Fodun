@@ -1,0 +1,43 @@
+@model Fodun.Models.Dtos.RecuperacionContraseñaRequest
+
+<h2>Recuperar Contraseña</h2>
+
+<div id="resultMessage"></div>
+
+<form id="recuperarClaveForm">
+    <div class="form-group">
+        <label for="NroDocumento">Número de Documento</label>
+        <input asp-for="NroDocumento" class="form-control" />
+        <span asp-validation-for="NroDocumento" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Recuperar Contraseña</button>
+</form>
+
+<a asp-action="Login">Volver al Login</a>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#recuperarClaveForm').submit(function(event) {
+                event.preventDefault();
+                var formData = {
+                    NroDocumento: $('#NroDocumento').val()
+                };
+
+                $.ajax({
+                    url: '/api/auth/RecuperarClave',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(formData),
+                    success: function(response) {
+                        $('#resultMessage').html('<div class="alert alert-success">Correo enviado con éxito. Revisa tu bandeja de entrada.</div>');
+                    },
+                    error: function(xhr) {
+                        $('#resultMessage').html('<div class="alert alert-danger">No se pudo enviar el correo. Intente nuevamente.</div>');
+                    }
+                });
+            });
+        });
+    </script>
+}

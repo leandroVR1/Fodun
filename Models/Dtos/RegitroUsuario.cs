@@ -1,5 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
+namespace Fodun.Models.Dtos
+{
+
 public class RegistroUsuario
 {
     public int Id { get; set; }
@@ -33,7 +36,8 @@ public class RegistroUsuario
     [Required(ErrorMessage = "La Clave es obligatoria")]
     public string Clave { get; set; }
 
-    public string PreguntaClave { get; set; } 
+    public string PreguntaClave { get; set; }
 
     public string RespuestaClave { get; set; }
+}
 }

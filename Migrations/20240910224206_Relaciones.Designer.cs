@@ -4,6 +4,7 @@ using Fodun.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fodun.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240910224206_Relaciones")]
+    partial class Relaciones
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,7 +57,7 @@ namespace Fodun.Migrations
                     b.ToTable("Alojamiento");
                 });
 
-            modelBuilder.Entity("Fodun.Models.Disponibilidad", b =>
+            modelBuilder.Entity("Fodun.Models.Disponivilidad", b =>
                 {
                     b.Property<int>("DisponibilidadId")
                         .ValueGeneratedOnAdd()
@@ -68,17 +71,14 @@ namespace Fodun.Migrations
                     b.Property<bool>("Disponible")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("FechaFin")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("FechaInicio")
+                    b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
 
                     b.HasKey("DisponibilidadId");
 
                     b.HasIndex("AlojamientoId");
 
-                    b.ToTable("Disponibilidades");
+                    b.ToTable("Disponivilidades");
                 });
 
             modelBuilder.Entity("Fodun.Models.Reserva", b =>
@@ -98,14 +98,8 @@ namespace Fodun.Migrations
                     b.Property<DateTime>("FechaInicio")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("NumeroHabitaciones")
-                        .HasColumnType("int");
-
                     b.Property<int>("NumeroPersonas")
                         .HasColumnType("int");
-
-                    b.Property<double>("TarifaPorNoche")
-                        .HasColumnType("float");
 
                     b.Property<double>("TotalPagar")
                         .HasColumnType("float");
@@ -162,9 +156,6 @@ namespace Fodun.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TarifaId"));
 
-                    b.Property<int>("AlojamientoId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("FechaFin")
                         .HasColumnType("datetime2");
 
@@ -180,20 +171,11 @@ namespace Fodun.Migrations
                     b.Property<double>("TarifaPorNoche")
                         .HasColumnType("float");
 
-                    b.Property<double>("TarifaPorPersona")
-                        .HasColumnType("float");
-
                     b.Property<string>("Temporada")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TipoTemporada")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("TarifaId");
-
-                    b.HasIndex("AlojamientoId");
 
                     b.HasIndex("SedeId");
 
@@ -274,7 +256,7 @@ namespace Fodun.Migrations
                     b.Navigation("Sede");
                 });
 
-            modelBuilder.Entity("Fodun.Models.Disponibilidad", b =>
+            modelBuilder.Entity("Fodun.Models.Disponivilidad", b =>
                 {
                     b.HasOne("Fodun.Models.Alojamiento", "Alojamiento")
                         .WithMany("Disponibilidades")
@@ -306,19 +288,11 @@ namespace Fodun.Migrations
 
             modelBuilder.Entity("Fodun.Models.Tarifa", b =>
                 {
-                    b.HasOne("Fodun.Models.Alojamiento", "Alojamiento")
-                        .WithMany("Tarifas")
-                        .HasForeignKey("AlojamientoId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Fodun.Models.Sede", "Sede")
                         .WithMany("Tarifas")
                         .HasForeignKey("SedeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Alojamiento");
 
                     b.Navigation("Sede");
                 });
@@ -328,8 +302,6 @@ namespace Fodun.Migrations
                     b.Navigation("Disponibilidades");
 
                     b.Navigation("Reservas");
-
-                    b.Navigation("Tarifas");
                 });
 
             modelBuilder.Entity("Fodun.Models.Sede", b =>

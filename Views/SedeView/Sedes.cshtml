@@ -1,0 +1,39 @@
+@model IEnumerable<Fodun.Models.Sede>
+
+@{
+    ViewData["Title"] = "Sedes y Apartamentos";
+}
+
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/SedeStyle.css" />
+</head>
+
+<div class="panel panel-default todo-panel">
+    <div class="panel-heading">@ViewData["Title"]</div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Tipo</th>
+                <th>Ubicación</th>
+                <th>Seleccionar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sede in Model)
+            {
+                <tr>
+                    <td>@sede.Nombre</td>
+                    <td>@sede.Descripcion</td>
+                    <td>@sede.Tipo</td>
+                    <td>@sede.Ubicacion</td>
+                    <td>
+                        <a href="@Url.Action("Reserva", "Sedes", new { id = sede.SedeId })" class="button-select">Seleccionar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

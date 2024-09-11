@@ -1,0 +1,79 @@
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+@model Fodun.Models.Dtos.LoginUsuario
+@{
+  
+    ViewData["Title"] = "Fodun Ingreso/Registro";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/UsuarioStyle.css" />
+</head>
+
+
+<div class="form-container">
+    <form asp-action="Login" method="post">
+        <div class="form-group">
+            <label for="NroDocumento">Número de Documento:</label>
+            <br>
+            <input asp-for="NroDocumento" class="form-control" />
+            <span asp-validation-for="NroDocumento" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Clave">Clave:</label>
+            <br>
+            <input type="password" id="Clave" class="form-control" readonly />
+            <input type="hidden" asp-for="Clave" />
+            <span asp-validation-for="Clave" class="text-danger"></span>
+        </div>
+
+        <div class="teclado-numerico">
+            <div class="grid-container">
+                <button type="button" class="btn" onclick="appendDigit('1')">1</button>
+                <button type="button" class="btn" onclick="appendDigit('2')">2</button>
+                <button type="button" class="btn" onclick="appendDigit('3')">3</button>
+                <button type="button" class="btn" onclick="appendDigit('4')">4</button>
+                <button type="button" class="btn" onclick="appendDigit('5')">5</button>
+                <button type="button" class="btn" onclick="appendDigit('6')">6</button>
+                <button type="button" class="btn" onclick="appendDigit('7')">7</button>
+                <button type="button" class="btn" onclick="appendDigit('8')">8</button>
+                <button type="button" class="btn" onclick="appendDigit('9')">9</button>
+                <button type="button" class="btn" onclick="appendDigit('0')">0</button>
+                <button type="button" class="btn" onclick="deleteLastDigit()">Limpiar</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Ingresar</button>
+        </div>
+
+        <div class="form-group">
+            <a asp-controller="UsuariosView" asp-action="RecuperarClave" class="forgot-password">¿Olvidaste la clave?</a>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    function appendDigit(digit) {
+        var input = document.getElementById('Clave');
+        input.value += digit;
+        document.querySelector("input[name='Clave']").value = input.value; 
+    }
+
+    function deleteLastDigit() {
+        var input = document.getElementById('Clave');
+        input.value = input.value.slice(0, -1);
+        document.querySelector("input[name='Clave']").value = input.value;  
+    }
+</script>
+
+
+

@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Fodun.Models
 {
@@ -13,7 +10,8 @@ namespace Fodun.Models
         public int CapacidadTotal { get; set; }
         public string Ubicacion { get; set; }
         public string Descripcion { get; set; }
-        
-        
+
+        public ICollection<Alojamiento> Alojamientos { get; set; }
+        public ICollection<Tarifa> Tarifas { get; set; }
     }
 }

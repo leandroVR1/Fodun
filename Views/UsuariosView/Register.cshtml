@@ -1,0 +1,106 @@
+@model Fodun.Models.Dtos.RegistroUsuario
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Fodun Ingreso/Registro";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/UsuarioStyle.css" />
+</head>
+    
+<div class="container text-center">
+    <header class="header">
+        <h2 id="titulo" class="fw-bold">Registro de Usuario</h2>
+    </header>
+
+    <form asp-action="Register" asp-controller="UsuariosView" method="post">
+        <div class="form-grid">
+            <!-- Columna 1 -->
+            <div class="form-column">
+                <div class="mb-3 text-start fw-bold">
+                    <label for="NroDocumento" class="form-label">Número de Documento</label>
+                    <input type="text" class="form-control" id="NroDocumento" asp-for="NroDocumento" placeholder="Ingrese su número de documento" />
+                    <span asp-validation-for="NroDocumento" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="Nombre" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="Nombre" asp-for="Nombre" placeholder="Ingrese su nombre completo" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="FechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="FechaNacimiento" asp-for="FechaNacimiento" />
+                    <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="Email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="Email" asp-for="Email" placeholder="Ingrese su correo electrónico" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="Celular" class="form-label">Celular</label>
+                    <input type="text" class="form-control" id="Celular" asp-for="Celular" placeholder="Ingrese su número de celular" />
+                    <span asp-validation-for="Celular" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="Departamento" class="form-label">Departamento</label>
+                    <input type="text" class="form-control" id="Departamento" asp-for="Departamento" placeholder="Ingrese su departamento" />
+                    <span asp-validation-for="Departamento" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="Municipio" class="form-label">Municipio</label>
+                    <input type="text" class="form-control" id="Municipio" asp-for="Municipio" placeholder="Ingrese su municipio" />
+                    <span asp-validation-for="Municipio" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="Barrio" class="form-label">Barrio</label>
+                    <input type="text" class="form-control" id="Barrio" asp-for="Barrio" placeholder="Ingrese su barrio" />
+                    <span asp-validation-for="Barrio" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="Direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="Direccion" asp-for="Direccion" placeholder="Ingrese su dirección" />
+                    <span asp-validation-for="Direccion" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="Telefono" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="Telefono" asp-for="Telefono" placeholder="Ingrese su número de teléfono" />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="form-column">
+                <div class="mb-3 text-start fw-bold">
+                    <label for="Clave" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="Clave" asp-for="Clave" placeholder="Ingrese su contraseña" />
+                    <span asp-validation-for="Clave" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="PreguntaClave" class="form-label">Pregunta de Seguridad</label>
+                    <input type="text" class="form-control" id="PreguntaClave" asp-for="PreguntaClave" placeholder="Ingrese su pregunta de seguridad" />
+                    <span asp-validation-for="PreguntaClave" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 text-start fw-bold">
+                    <label for="RespuestaClave" class="form-label">Respuesta de Seguridad</label>
+                    <input type="text" class="form-control" id="RespuestaClave" asp-for="RespuestaClave" placeholder="Ingrese su respuesta de seguridad" />
+                    <span asp-validation-for="RespuestaClave" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="add-note-button">Registrar Usuario</button>
+    </form>
+</div>

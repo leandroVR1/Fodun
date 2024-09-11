@@ -1,8 +1,9 @@
 using System.Threading.Tasks;
 using Fodun.Data;
 using Fodun.Models;
-using Fodun.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
+using Fodun.Models.Dtos;
+
 
 namespace Fodun.Services
 {
@@ -27,7 +28,7 @@ namespace Fodun.Services
         {
             var usuario = new Usuario
             {
-                NroDocumento = registroDto.NroDocumento,
+               NroDocumento = registroDto.NroDocumento,
                 Nombre = registroDto.Nombre,
                 FechaNacimiento = registroDto.FechaNacimiento,
                 Celular = registroDto.Celular,
@@ -40,10 +41,22 @@ namespace Fodun.Services
                 Clave = registroDto.Clave,
                 PreguntaClave = registroDto.PreguntaClave,
                 RespuestaClave = registroDto.RespuestaClave
+              
             };
 
             _context.Usuarios.Add(usuario);
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> RecuperarClave(string nroDocumento)
+        {
+            var usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.NroDocumento == nroDocumento);
+
+            if (usuario == null) return false;
+
+          
+            return true;
         }
     }
 }

@@ -2,6 +2,6 @@ namespace Fodun.Models.Dtos
 {
     public class RecuperacionContraseñaRequest
     {
-        public string Email { get; set; }
+        public string NroDocumento { get; set; }
     }
 }

@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Fodun.Models
 {
@@ -13,9 +10,15 @@ namespace Fodun.Models
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public int NumeroPersonas { get; set; }
-        public Double TotalPagar { get; set; }
-        public Usuario Usuario { get; set; }
 
+        public int NumeroHabitaciones { get; set; }
+
+        public double TarifaPorNoche { get; set; }
+
+        public double TotalPagar { get; set; }
+
+        public Usuario Usuario { get; set; }
+        public Alojamiento Alojamiento { get; set; }
     }
-        
+
 }

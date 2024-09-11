@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets/Fodun.bundle.scp.css"
     },
     {
+      "Id": "/home/hackaton/Documents/Fodun/wwwroot/css/SedeStyle.css",
+      "PackagePath": "staticwebassets/css/SedeStyle.css"
+    },
+    {
+      "Id": "/home/hackaton/Documents/Fodun/wwwroot/css/UsuarioStyle.css",
+      "PackagePath": "staticwebassets/css/UsuarioStyle.css"
+    },
+    {
       "Id": "/home/hackaton/Documents/Fodun/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

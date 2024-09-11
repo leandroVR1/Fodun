@@ -1,0 +1,55 @@
+@model Fodun.Models.Reserva
+
+@{
+    ViewData["Title"] = "Crear Reserva";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="UsuarioId" class="control-label"></label>
+        <input asp-for="UsuarioId" class="form-control" />
+        <span asp-validation-for="UsuarioId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AlojamientoId" class="control-label"></label>
+        <select asp-for="AlojamientoId" class="form-control" asp-items="@(new SelectList(ViewData["Alojamientos"] as IEnumerable<Fodun.Models.Alojamiento>, "AlojamientoId", "TipoAlojamiento"))">
+            <option value="">Select Alojamiento</option>
+        </select>
+        <span asp-validation-for="AlojamientoId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FechaInicio" class="control-label"></label>
+        <input asp-for="FechaInicio" class="form-control" />
+        <span asp-validation-for="FechaInicio" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FechaFin" class="control-label"></label>
+        <input asp-for="FechaFin" class="form-control" />
+        <span asp-validation-for="FechaFin" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumeroPersonas" class="control-label"></label>
+        <input asp-for="NumeroPersonas" class="form-control" />
+        <span asp-validation-for="NumeroPersonas" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumeroHabitaciones" class="control-label"></label>
+        <input asp-for="NumeroHabitaciones" class="form-control" />
+        <span asp-validation-for="NumeroHabitaciones" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TarifaPorNoche" class="control-label"></label>
+        <input asp-for="TarifaPorNoche" class="form-control" />
+        <span asp-validation-for="TarifaPorNoche" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TotalPagar" class="control-label"></label>
+        <input asp-for="TotalPagar" class="form-control" />
+        <span asp-validation-for="TotalPagar" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

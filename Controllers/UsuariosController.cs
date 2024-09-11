@@ -25,52 +25,42 @@ namespace Fodun.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginUsuario loginDto)
         {
-            if (ModelState.IsValid)
-            {
-                var isAuthenticated = await _userService.ValidateUser(loginDto.NroDocumento, loginDto.Clave);
-                if (isAuthenticated)
-                {
-                    return Ok(new { message = "Autenticación exitosa" });
-                }
-                return Unauthorized(new { message = "Credenciales incorrectas" });
-            }
-            return BadRequest(ModelState);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            var isAuthenticated = await _userService.ValidateUser(loginDto.NroDocumento, loginDto.Clave);
+            if (!isAuthenticated) return Unauthorized(new { message = "Credenciales incorrectas" });
+
+            return Ok(new { message = "Autenticación exitosa" });
         }
+
+        
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegistroUsuario registerDto)
         {
-            if (ModelState.IsValid)
-            {
-                var result = await _userService.RegisterUser(registerDto);
-                if (result)
-                {
-                    return Ok(new { message = "Usuario registrado exitosamente" });
-                }
-                return BadRequest(new { message = "Error al registrar el usuario" });
-            }
-            return BadRequest(ModelState);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            var result = await _userService.RegisterUser(registerDto);
+            if (!result) return BadRequest(new { message = "Error al registrar el usuario" });
+
+            return Ok(new { message = "Usuario registrado exitosamente" });
         }
 
-        [HttpPost("enviarCorreoRecuperacion")]
-        public async Task<IActionResult> EnviarCorreoRecuperacion([FromBody] RecuperacionContraseñaRequest request)
-        {
-            if (string.IsNullOrEmpty(request.Email))
-            {
-                return BadRequest("El correo electrónico es requerido.");
-            }
+        [HttpPost("RecuperarClave")]
+public async Task<IActionResult> RecuperarClave([FromBody] RecuperacionContraseñaRequest request)
+{
+    if (string.IsNullOrEmpty(request.NroDocumento))
+        return BadRequest("El número de documento es requerido.");
 
-            var usuario = await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == request.Email);
-            if (usuario == null)
-            {
-                return NotFound("No se encontró un usuario con este correo.");
-            }
+    var usuario = await _context.Usuarios.FirstOrDefaultAsync(u => u.NroDocumento == request.NroDocumento);
+    if (usuario == null) return NotFound("No se encontró un usuario con este número de documento.");
 
-            var emailSubject = "Recuperación de contraseña";
-            var emailBody = $"Su contraseña es: {usuario.Clave}";
-            await _emailService.SendAsync(request.Email, emailSubject, emailBody);
+    var emailSubject = "Recuperación de contraseña";
+    var emailBody = $"Su contraseña es: {usuario.Clave}";
+    await _emailService.SendAsync(usuario.Email, emailSubject, emailBody);
 
-            return Ok(new { message = "Correo enviado con éxito." });
-        }
+    return Ok(new { message = "Correo enviado con éxito." });
+}
+
     }
 }

@@ -26,12 +26,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/hackaton/Documents/Fodun/Views/Reservas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVzZXJ2YXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/hackaton/Documents/Fodun/Views/SedeView/Sedes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VkZVZpZXcvU2VkZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/hackaton/Documents/Fodun/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/hackaton/Documents/Fodun/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/hackaton/Documents/Fodun/Views/UsuariosView/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3NWaWV3L0xvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/hackaton/Documents/Fodun/Views/UsuariosView/RecuperarClave.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3NWaWV3L1JlY3VwZXJhckNsYXZlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/hackaton/Documents/Fodun/Views/UsuariosView/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3NWaWV3L1JlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/hackaton/Documents/Fodun/Views/_ViewImports.cshtml]

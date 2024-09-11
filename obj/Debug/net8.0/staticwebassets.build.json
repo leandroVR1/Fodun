@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iAqyaVa35EkSNZN8ACkzQBQ6Zcsyvsabj/ieeuheQOo=",
+  "Hash": "ciplNwCxBKpoxP3IaNOykQKI/IHRLAsXatcbyZgqDu4=",
   "Source": "Fodun",
   "BasePath": "_content/Fodun",
   "Mode": "Default",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "/home/hackaton/Documents/Fodun/obj/Debug/net8.0/scopedcss/projectbundle/Fodun.bundle.scp.css"
     },
     {
+      "Identity": "/home/hackaton/Documents/Fodun/wwwroot/css/SedeStyle.css",
+      "SourceId": "Fodun",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/hackaton/Documents/Fodun/wwwroot/",
+      "BasePath": "_content/Fodun",
+      "RelativePath": "css/SedeStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/SedeStyle.css"
+    },
+    {
       "Identity": "/home/hackaton/Documents/Fodun/wwwroot/css/site.css",
       "SourceId": "Fodun",
       "SourceType": "Discovered",
@@ -72,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/home/hackaton/Documents/Fodun/wwwroot/css/UsuarioStyle.css",
+      "SourceId": "Fodun",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/hackaton/Documents/Fodun/wwwroot/",
+      "BasePath": "_content/Fodun",
+      "RelativePath": "css/UsuarioStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/UsuarioStyle.css"
     },
     {
       "Identity": "/home/hackaton/Documents/Fodun/wwwroot/favicon.ico",

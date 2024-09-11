@@ -19,21 +19,14 @@ namespace Fodun.Models{
         [Required(ErrorMessage = "El Email es obligatorio")]
         public string Email { get; set; }
         public string Departamento { get; set; }
-
         public string Municipio {get; set; }
-
         public string Barrio { get; set; }
-
         public string Direccion { get; set; }
         public string Telefono {get; set; }
         public string Clave { get; set; }
-
         public string PreguntaClave {get; set; }
-
         public string RespuestaClave {get; set; }
-
-
-
+         public ICollection<Reserva> Reservas { get; set; }
 
     }
 }

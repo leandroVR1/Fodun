@@ -7,6 +7,6 @@ namespace Fodun.Services
     {
         Task<bool> ValidateUser(string nroDocumento, string clave);
         Task<bool> RegisterUser(RegistroUsuario registroDto);
-        
+        Task<bool> RecuperarClave(string emailOrDocumento);
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DITaVHN6v6ZnRx82HeaQ5Shd5fA3jSC9PQ2qwgZLcs4=",
+  "Hash": "bYpwrD0Kk0B9A5mDnyRJsRoUd8ts7uW+NsNzDO8HBtw=",
   "Source": "Fodun",
   "BasePath": "_content/Fodun",
   "Mode": "Default",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Fodun.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\css\\FormStyle.css",
+      "SourceId": "Fodun",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\",
+      "BasePath": "_content/Fodun",
+      "RelativePath": "css/FormStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\FormStyle.css"
+    },
+    {
       "Identity": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\css\\Register.css",
       "SourceId": "Fodun",
       "SourceType": "Discovered",
@@ -72,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Register.css"
+    },
+    {
+      "Identity": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\css\\ReservaStyle.css",
+      "SourceId": "Fodun",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\",
+      "BasePath": "_content/Fodun",
+      "RelativePath": "css/ReservaStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ReservaStyle.css"
     },
     {
       "Identity": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\css\\SedeStyle.css",

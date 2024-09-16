@@ -1,0 +1,44 @@
+[
+  {
+    "DisponibilidadId": 1,
+    "AlojamientoId": 1,
+    "FechaInicio": "2024-09-01T00:00:00",
+    "Disponible": "1",
+    "FechaFin": "2024-09-10T00:00:00"
+  },
+  {
+    "DisponibilidadId": 2,
+    "AlojamientoId": 2,
+    "FechaInicio": "2024-09-05T00:00:00",
+    "Disponible": "1",
+    "FechaFin": "2024-09-15T00:00:00"
+  },
+  {
+    "DisponibilidadId": 3,
+    "AlojamientoId": 3,
+    "FechaInicio": "2024-09-12T00:00:00",
+    "Disponible": "1",
+    "FechaFin": "2024-09-18T00:00:00"
+  },
+  {
+    "DisponibilidadId": 4,
+    "AlojamientoId": 4,
+    "FechaInicio": "2024-09-20T00:00:00",
+    "Disponible": "0",
+    "FechaFin": "2024-09-25T00:00:00"
+  },
+  {
+    "DisponibilidadId": 5,
+    "AlojamientoId": 5,
+    "FechaInicio": "2024-09-25T00:00:00",
+    "Disponible": "1",
+    "FechaFin": "2024-10-01T00:00:00"
+  },
+  {
+    "DisponibilidadId": 6,
+    "AlojamientoId": 6,
+    "FechaInicio": "2024-09-01T00:00:00",
+    "Disponible": "0",
+    "FechaFin": "2024-09-10T00:00:00"
+  }
+]

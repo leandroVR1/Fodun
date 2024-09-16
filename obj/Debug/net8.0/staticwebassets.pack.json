@@ -5,8 +5,16 @@
       "PackagePath": "staticwebassets\\Fodun.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\css\\FormStyle.css",
+      "PackagePath": "staticwebassets\\css\\FormStyle.css"
+    },
+    {
       "Id": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\css\\Register.css",
       "PackagePath": "staticwebassets\\css\\Register.css"
+    },
+    {
+      "Id": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\css\\ReservaStyle.css",
+      "PackagePath": "staticwebassets\\css\\ReservaStyle.css"
     },
     {
       "Id": "C:\\Users\\yeifr\\OneDrive\\Escritorio\\Fodun\\wwwroot\\css\\SedeStyle.css",

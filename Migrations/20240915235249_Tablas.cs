@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Fodun.Migrations
 {
     /// <inheritdoc />
-    public partial class ConfigurarRestricciones : Migration
+    public partial class Tablas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

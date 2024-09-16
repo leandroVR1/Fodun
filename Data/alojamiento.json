@@ -1,0 +1,114 @@
+[
+  {
+    "AlojamientoId": 1,
+    "SedeId": 1,
+    "TipoAlojamiento": "Habitación",
+    "CapacidadMaxima": 32,
+    "NumeroHabitaciones": 8,
+    "Descripcion": "Ocho habitaciones con una cama doble y un camarote, baño, nevera, televisor y terraza."
+  },
+  {
+    "AlojamientoId": 2,
+    "SedeId": 2,
+    "TipoAlojamiento": "Alojamiento 1",
+    "CapacidadMaxima": 18,
+    "NumeroHabitaciones": 2,
+    "Descripcion": "Dos habitaciones con baño y televisor, una con cama doble y una sencilla, otra con una cama sencilla."
+  },
+  {
+    "AlojamientoId": 3,
+    "SedeId": 2,
+    "TipoAlojamiento": "Alojamiento 2",
+    "CapacidadMaxima": 18,
+    "NumeroHabitaciones": 2,
+    "Descripcion": "Dos habitaciones, una con cama doble y la otra con 4 camas sencillas."
+  },
+  {
+    "AlojamientoId": 4,
+    "SedeId": 3,
+    "TipoAlojamiento": "Alojamiento 1",
+    "CapacidadMaxima": 30,
+    "NumeroHabitaciones": 2,
+    "Descripcion": "Cocineta, baño, Televisor, 2 habitaciones, la 1 con dos camas sencillas, la 2 con una cama doble y una sencilla."
+  },
+  {
+    "AlojamientoId": 5,
+    "SedeId": 3,
+    "TipoAlojamiento": "Alojamiento 2",
+    "CapacidadMaxima": 30,
+    "NumeroHabitaciones": 2,
+    "Descripcion": "Cocineta, baño, Televisor, 2 habitaciones, la 1 con cama doble, la 2 con dos camas sencillas."
+  },
+  {
+    "AlojamientoId": 6,
+    "SedeId": 4,
+    "TipoAlojamiento": "Alojamiento 1",
+    "CapacidadMaxima": 24,
+    "NumeroHabitaciones": 1,
+    "Descripcion": "Una habitación con cama doble y un camarote, televisor, baño y cocineta."
+  },
+  {
+    "AlojamientoId": 7,
+    "SedeId": 5,
+    "TipoAlojamiento": "Alojamiento 1",
+    "CapacidadMaxima": 14,
+    "NumeroHabitaciones": 1,
+    "Descripcion": "Una cama doble, un camarote, baño, terraza y televisor."
+  },
+  {
+    "AlojamientoId": 8,
+    "SedeId": 1,
+    "TipoAlojamiento": "Habitación",
+    "CapacidadMaxima": 32,
+    "NumeroHabitaciones": 8,
+    "Descripcion": "Ocho habitaciones con una cama doble y un camarote, baño, nevera, televisor y terraza."
+  },
+  {
+    "AlojamientoId": 9,
+    "SedeId": 2,
+    "TipoAlojamiento": "Alojamiento 1",
+    "CapacidadMaxima": 18,
+    "NumeroHabitaciones": 2,
+    "Descripcion": "Dos habitaciones con baño y televisor, una con cama doble y una sencilla, otra con una cama sencilla."
+  },
+  {
+    "AlojamientoId": 10,
+    "SedeId": 2,
+    "TipoAlojamiento": "Alojamiento 2",
+    "CapacidadMaxima": 18,
+    "NumeroHabitaciones": 2,
+    "Descripcion": "Dos habitaciones, una con cama doble y la otra con 4 camas sencillas."
+  },
+  {
+    "AlojamientoId": 11,
+    "SedeId": 3,
+    "TipoAlojamiento": "Alojamiento 1",
+    "CapacidadMaxima": 30,
+    "NumeroHabitaciones": 2,
+    "Descripcion": "Cocineta, baño, Televisor, 2 habitaciones, la 1 con dos camas sencillas, la 2 con una cama doble y una sencilla."
+  },
+  {
+    "AlojamientoId": 12,
+    "SedeId": 3,
+    "TipoAlojamiento": "Alojamiento 2",
+    "CapacidadMaxima": 30,
+    "NumeroHabitaciones": 2,
+    "Descripcion": "Cocineta, baño, Televisor, 2 habitaciones, la 1 con cama doble, la 2 con dos camas sencillas."
+  },
+  {
+    "AlojamientoId": 13,
+    "SedeId": 4,
+    "TipoAlojamiento": "Alojamiento 1",
+    "CapacidadMaxima": 24,
+    "NumeroHabitaciones": 1,
+    "Descripcion": "Una habitación con cama doble y un camarote, televisor, baño y cocineta."
+  },
+  {
+    "AlojamientoId": 14,
+    "SedeId": 5,
+    "TipoAlojamiento": "Alojamiento 1",
+    "CapacidadMaxima": 14,
+    "NumeroHabitaciones": 1,
+    "Descripcion": "Una cama doble, un camarote, baño, terraza y televisor."
+  }
+]

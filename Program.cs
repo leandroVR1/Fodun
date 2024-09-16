@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Fodun.Data;
 using Fodun.Services;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,11 +13,18 @@ builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpS
 builder.Services.AddTransient<EmailService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISedeService, SedeService>();
+builder.Services.AddScoped<IReservaService, ReservaService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Configurar Identity
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
 builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 
@@ -35,11 +43,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=UsuariosView}/{action=Login}/{id?}");
-    //pattern: "{controller=SedeView}/{action=Sedes}/{id?}");
 
 app.Run();

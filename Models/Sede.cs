@@ -12,6 +12,10 @@ namespace Fodun.Models
         public string Descripcion { get; set; }
 
         public ICollection<Alojamiento> Alojamientos { get; set; }
+        
         public ICollection<Tarifa> Tarifas { get; set; }
+
+        public ICollection<Imagen> Imagenes { get; set; }  // Imágenes relacionadas con la sede
+
     }
 }

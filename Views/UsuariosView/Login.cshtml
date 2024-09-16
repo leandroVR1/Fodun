@@ -25,41 +25,40 @@
         <h2>Ingreso Sistema de Reservas</h2>
         <p>Digite su Clave a través del teclado dinámico que se encuentra en la pantalla.</p>
         <form asp-action="Login" method="post">
-            <div class="form-group">
-                <label for="documento">Nro Documento:</label>
-                <input type="text" id="documento" name="documento" required>
-            </div>
-            <div class="form-group">
-                <label for="Clave">Clave:</label>
-                <input type="password" id="Clave" name="clave"  class="form-control" readonly>
-                <input type="hidden" asp-for="Clave" />
-                <span asp-validation-for="Clave" class="text-danger"></span>
+    <div class="form-group">
+        <label for="NroDocumento">Nro Documento:</label>
+        <input type="text" id="NroDocumento" name="NroDocumento" asp-for="NroDocumento" required />
+    </div>
+    <div class="form-group">
+        <label for="Clave">Clave:</label>
+        <input type="password" id="Clave" name="Clave" class="form-control" readonly />
+        <input type="hidden" asp-for="Clave" />
+        <span asp-validation-for="Clave" class="text-danger"></span>
+    </div>
+    <div class="teclado-numerico">
+        <!-- Botones numéricos -->
+        <button type="button" class="btn" onclick="appendDigit('1')">1</button>
+        <button type="button" class="btn" onclick="appendDigit('2')">2</button>
+        <button type="button" class="btn" onclick="appendDigit('3')">3</button>
+        <button type="button" class="btn" onclick="appendDigit('4')">4</button>
+        <button type="button" class="btn" onclick="appendDigit('5')">5</button>
+        <button type="button" class="btn" onclick="appendDigit('6')">6</button>
+        <button type="button" class="btn" onclick="appendDigit('7')">7</button>
+        <button type="button" class="btn" onclick="appendDigit('8')">8</button>
+        <button type="button" class="btn" onclick="appendDigit('9')">9</button>
+        <button type="button" class="btn" onclick="appendDigit('0')">0</button>
+        <button type="button" class="btn limpiar" onclick="deleteLastDigit()">Limpiar</button>
+    </div>
+    <button type="submit" class="btn-aceptar">Aceptar</button>
+    <a asp-controller="UsuariosView" asp-action="RecuperarClave" class="forgot-password">¿Olvidó su clave?</a>
+</form>
 
-            </div>
-            <div class="teclado-numerico">
-                <!-- Botones numéricos -->
-                <button type="button" class="btn" onclick="appendDigit('1')">1</button>
-                <button type="button" class="btn" onclick="appendDigit('2')">2</button>
-                <button type="button" class="btn" onclick="appendDigit('3')">3</button>
-                <button type="button" class="btn" onclick="appendDigit('4')">4</button>
-                <button type="button" class="btn" onclick="appendDigit('5')">5</button>
-                <button type="button" class="btn" onclick="appendDigit('6')">6</button>
-                <button type="button" class="btn" onclick="appendDigit('7')">7</button>
-                <button type="button" class="btn" onclick="appendDigit('8')">8</button>
-                <button type="button" class="btn" onclick="appendDigit('9')">9</button>
-                <button type="button" class="btn" onclick="appendDigit('0')">0</button>
-                <button type="button" class="btn limpiar" onclick="deleteLastDigit()">Limpiar</button>
-            </div>
-            <button type="submit" class="btn-aceptar">Aceptar</button>
-            <a asp-controller="UsuariosView" asp-action="RecuperarClave" class="forgot-password">¿Olvidó su clave?</a>
-        </form>
     </div>
 </div>
 
 <div class="register-new-user">
     <a asp-controller="UsuariosView" asp-action="Register" class="btn btn-primary">¿Usuario Nuevo? Regístrese Aquí</a>
 </div>
-
 
 <script>
     function appendDigit(digit) {

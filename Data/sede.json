@@ -1,0 +1,98 @@
+[
+  {
+    "SedeId": 1,
+    "Nombre": "Villeta",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 32,
+    "Ubicacion": "Villeta",
+    "Descripcion": "Ocho habitaciones con una alcoba que tiene una cama doble y un camarote, baño, nevera, televisor y terraza cubierta."
+  },
+  {
+    "SedeId": 2,
+    "Nombre": "El placer – Fusagasugá",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 34,
+    "Ubicacion": "Fusagasugá",
+    "Descripcion": "Varios alojamientos, algunos con habitaciones múltiples y cabañas con sala de estar, sofá cama, baño, cocineta equipada y nevera."
+  },
+  {
+    "SedeId": 3,
+    "Nombre": "Gonzalo Morante - Chinchiná",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 30,
+    "Ubicacion": "Chinchiná",
+    "Descripcion": "Alojamientos con cocineta, baño, Televisor, dos habitaciones y otros servicios."
+  },
+  {
+    "SedeId": 4,
+    "Nombre": "Tablones – Palmira",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 24,
+    "Ubicacion": "Palmira",
+    "Descripcion": "Alojamientos con habitaciones dobles, camarotes, sala de estar, televisor, baño y cocineta."
+  },
+  {
+    "SedeId": 5,
+    "Nombre": "Manguruma – Santa fe de Antioquia",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 46,
+    "Ubicacion": "Santa Fe de Antioquia",
+    "Descripcion": "Alojamientos con cama doble, camarote, sofá cama, baño, terraza y televisor."
+  },
+  {
+    "SedeId": 6,
+    "Nombre": "Federman - Bogotá",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 16,
+    "Ubicacion": "Bogotá",
+    "Descripcion": "Habitaciones, zona húmeda con baño turco, sauna, jacuzzi, gimnasio, juegos de mesa, sala de masajes y cafetería."
+  },
+  {
+    "SedeId": 7,
+    "Nombre": "Villeta",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 32,
+    "Ubicacion": "Villeta",
+    "Descripcion": "Ocho habitaciones con una alcoba que tiene una cama doble y un camarote, baño, nevera, televisor y terraza cubierta."
+  },
+  {
+    "SedeId": 8,
+    "Nombre": "El placer – Fusagasugá",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 34,
+    "Ubicacion": "Fusagasugá",
+    "Descripcion": "Varios alojamientos, algunos con habitaciones múltiples y cabañas con sala de estar, sofá cama, baño, cocineta equipada y nevera."
+  },
+  {
+    "SedeId": 9,
+    "Nombre": "Gonzalo Morante - Chinchiná",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 30,
+    "Ubicacion": "Chinchiná",
+    "Descripcion": "Alojamientos con cocineta, baño, Televisor, dos habitaciones y otros servicios."
+  },
+  {
+    "SedeId": 10,
+    "Nombre": "Tablones – Palmira",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 24,
+    "Ubicacion": "Palmira",
+    "Descripcion": "Alojamientos con habitaciones dobles, camarotes, sala de estar, televisor, baño y cocineta."
+  },
+  {
+    "SedeId": 11,
+    "Nombre": "Manguruma – Santa fe de Antioquia",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 46,
+    "Ubicacion": "Santa Fe de Antioquia",
+    "Descripcion": "Alojamientos con cama doble, camarote, sofá cama, baño, terraza y televisor."
+  },
+  {
+    "SedeId": 12,
+    "Nombre": "Federman - Bogotá",
+    "Tipo": "Recreativa",
+    "CapacidadTotal": 16,
+    "Ubicacion": "Bogotá",
+    "Descripcion": "Habitaciones, zona húmeda con baño turco, sauna, jacuzzi, gimnasio, juegos de mesa, sala de masajes y cafetería."
+  }
+]

@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Fodun.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Fodun.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -16,9 +18,12 @@ namespace Fodun.Data
         public DbSet<Tarifa> Tarifas { get; set; }
         public DbSet<Disponibilidad> Disponibilidades { get; set; }
         public DbSet<Alojamiento> Alojamiento { get; set; }
+        public DbSet<Imagen> Imagenes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Disponibilidad>()
                 .HasOne(d => d.Alojamiento)
                 .WithMany(a => a.Disponibilidades)
@@ -44,14 +49,23 @@ namespace Fodun.Data
                 .WithMany(s => s.Tarifas)
                 .HasForeignKey(t => t.SedeId);
 
-            // Modificación para evitar cascadas múltiples
             modelBuilder.Entity<Tarifa>()
                 .HasOne(t => t.Alojamiento)
                 .WithMany(a => a.Tarifas)
                 .HasForeignKey(t => t.AlojamientoId)
-                .OnDelete(DeleteBehavior.Restrict);  
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Reserva>()
+                .Property(r => r.LavanderiaCosto)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<Reserva>()
+                .Property(r => r.TarifaPorNoche)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<Reserva>()
+                .Property(r => r.TotalPagar)
+                .HasColumnType("decimal(18,2)");
         }
     }
-
-
-    }
+}

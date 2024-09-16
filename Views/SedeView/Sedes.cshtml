@@ -1,39 +1,52 @@
 @model IEnumerable<Fodun.Models.Sede>
 
-@{
-    ViewData["Title"] = "Sedes y Apartamentos";
-}
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>@ViewData["Title"]</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sedes</title>
     <link rel="stylesheet" href="~/css/SedeStyle.css" />
 </head>
-
-<div class="panel panel-default todo-panel">
-    <div class="panel-heading">@ViewData["Title"]</div>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Tipo</th>
-                <th>Ubicación</th>
-                <th>Seleccionar</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var sede in Model)
-            {
-                <tr>
-                    <td>@sede.Nombre</td>
-                    <td>@sede.Descripcion</td>
-                    <td>@sede.Tipo</td>
-                    <td>@sede.Ubicacion</td>
-                    <td>
-                        <a href="@Url.Action("Reserva", "Sedes", new { id = sede.SedeId })" class="button-select">Seleccionar</a>
-                    </td>
+<body>
+    <div class="panel panel-default todo-panel">
+        <table class="table table-hover">
+            <thead>
+                <tr class="procesoReserva">
+                    <th colspan="6">Sedes Recreativas y Apartamentos</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Tipo</th>
+                    <th>Ubicación</th>
+                    <th>Seleccionar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var sede in Model)
+                    {
+                        <tr>
+                            <td><img src="ruta_de_imagen"></td>
+                            <td>@sede.Nombre</td>
+                            <td>@sede.Descripcion</td>
+                            <td>@sede.Tipo</td>
+                            <td>@sede.Ubicacion</td>
+                           <td><a class="button-select" href="@Url.Action("Create", "Reservas", new { sedeId = sede.SedeId })">Seleccionar</a></td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6">No se encontraron sedes.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

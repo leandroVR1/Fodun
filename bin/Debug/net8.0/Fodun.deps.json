@@ -10,6 +10,7 @@
         "dependencies": {
           "MailKit": "4.7.1.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.8",
+          "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.8"
         },

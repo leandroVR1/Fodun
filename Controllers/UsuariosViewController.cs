@@ -26,7 +26,6 @@ namespace Fodun.Controllers
         }
 
 
-
         [HttpPost]
         public async Task<IActionResult> Register(RegistroUsuario registerDto)
         {
@@ -64,9 +63,10 @@ namespace Fodun.Controllers
                 return View(loginDto);
             }
 
-
-            return RedirectToAction("Dashboard", "Home");
+            // Redirige al usuario a la página deseada después de iniciar sesión exitosamente
+            return RedirectToAction("Sedes", "SedeView");
         }
+
 
 
 

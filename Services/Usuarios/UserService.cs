@@ -3,6 +3,8 @@ using Fodun.Data;
 using Fodun.Models;
 using Microsoft.EntityFrameworkCore;
 using Fodun.Models.Dtos;
+using Microsoft.AspNetCore.Identity;
+
 
 
 namespace Fodun.Services
@@ -10,25 +12,39 @@ namespace Fodun.Services
     public class UserService : IUserService
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-        public UserService(ApplicationDbContext context)
+        public UserService(ApplicationDbContext context, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _context = context;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public async Task<bool> ValidateUser(string nroDocumento, string clave)
         {
+            // Busca el usuario en la base de datos por NroDocumento
             var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.NroDocumento == nroDocumento && u.Clave == clave);
+                .FirstOrDefaultAsync(u => u.NroDocumento == nroDocumento);
 
-            return usuario != null;
+            if (usuario == null)
+            {
+                return false; // El usuario no existe
+            }
+
+            // Verifica la clave (esto asume que usas la clave en texto plano, lo cual no es recomendable)
+            return usuario.Clave == clave;
         }
+
+
+
 
         public async Task<bool> RegisterUser(RegistroUsuario registroDto)
         {
             var usuario = new Usuario
             {
-               NroDocumento = registroDto.NroDocumento,
+                NroDocumento = registroDto.NroDocumento,
                 Nombre = registroDto.Nombre,
                 FechaNacimiento = registroDto.FechaNacimiento,
                 Celular = registroDto.Celular,
@@ -41,7 +57,7 @@ namespace Fodun.Services
                 Clave = registroDto.Clave,
                 PreguntaClave = registroDto.PreguntaClave,
                 RespuestaClave = registroDto.RespuestaClave
-              
+
             };
 
             _context.Usuarios.Add(usuario);
@@ -55,7 +71,7 @@ namespace Fodun.Services
 
             if (usuario == null) return false;
 
-          
+
             return true;
         }
     }

@@ -1,0 +1,129 @@
+/* Contenedor general */
+.form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+.form-header h2, .form-left h3, .form-right h3, .table-container h3 {
+    color: #bf2f38;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Contenido del formulario */
+.form-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+/* Sección izquierda */
+.form-left {
+    width: 48%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+/* Sección derecha */
+.form-right {
+    width: 48%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sede-description {
+    text-align: justify;
+}
+
+.sede-image {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery-image {
+    width: 30%;
+    border-radius: 8px;
+}
+
+/* Estilos generales de inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-control-checkbox {
+    transform: scale(1.2);
+}
+
+/* Botón de Reservar */
+.btn-reservar {
+    background-color: #bf2f38;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-reservar:hover {
+    background-color: #a12a31;
+}
+
+/* Tabla de Habitaciones */
+.table-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.table-habitaciones {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-habitaciones th, .table-habitaciones td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-habitaciones th {
+    background-color: #bf2f38;
+    color: white;
+}
+
+.table-habitaciones td i {
+    color: #bf2f38;
+}
+
+/* Iconos en la tabla */
+.fa-search, .fa-check, .fa-calendar {
+    font-size: 1.25rem;
+}
+
+/* Estilo de checkboxes */
+.table-habitaciones input[type="checkbox"] {
+    transform: scale(1.2);
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "TarifaId": 1,
+    "SedeId": 1,
+    "Temporada": "Baja",
+    "NumeroPersonas": 4,
+    "TarifaPorNoche": 70000.0,
+    "FechaInicio": "2024-01-01T00:00:00",
+    "FechaFin": "2024-03-31T00:00:00",
+    "TipoTemporada": "Normal",
+    "AlojamientoId": 1,
+    "TarifaPorPersona": 0.0
+  },
+  {
+    "TarifaId": 2,
+    "SedeId": 2,
+    "Temporada": "Alta",
+    "NumeroPersonas": 4,
+    "TarifaPorNoche": 90000.0,
+    "FechaInicio": "2024-06-01T00:00:00",
+    "FechaFin": "2024-08-31T00:00:00",
+    "TipoTemporada": "Festivo",
+    "AlojamientoId": 2,
+    "TarifaPorPersona": 16000.0
+  },
+  {
+    "TarifaId": 3,
+    "SedeId": 3,
+    "Temporada": "Baja",
+    "NumeroPersonas": 6,
+    "TarifaPorNoche": 70000.0,
+    "FechaInicio": "2024-01-01T00:00:00",
+    "FechaFin": "2024-03-31T00:00:00",
+    "TipoTemporada": "Normal",
+    "AlojamientoId": 3,
+    "TarifaPorPersona": 0.0
+  },
+  {
+    "TarifaId": 4,
+    "SedeId": 4,
+    "Temporada": "Alta",
+    "NumeroPersonas": 6,
+    "TarifaPorNoche": 90000.0,
+    "FechaInicio": "2024-06-01T00:00:00",
+    "FechaFin": "2024-08-31T00:00:00",
+    "TipoTemporada": "Festivo",
+    "AlojamientoId": 4,
+    "TarifaPorPersona": 16000.0
+  },
+  {
+    "TarifaId": 5,
+    "SedeId": 5,
+    "Temporada": "Baja",
+    "NumeroPersonas": 4,
+    "TarifaPorNoche": 70000.0,
+    "FechaInicio": "2024-01-01T00:00:00",
+    "FechaFin": "2024-03-31T00:00:00",
+    "TipoTemporada": "Normal",
+    "AlojamientoId": 5,
+    "TarifaPorPersona": 0.0
+  },
+  {
+    "TarifaId": 6,
+    "SedeId": 6,
+    "Temporada": "Alta",
+    "NumeroPersonas": 6,
+    "TarifaPorNoche": 90000.0,
+    "FechaInicio": "2024-06-01T00:00:00",
+    "FechaFin": "2024-08-31T00:00:00",
+    "TipoTemporada": "Festivo",
+    "AlojamientoId": 6,
+    "TarifaPorPersona": 16000.0
+  }
+]

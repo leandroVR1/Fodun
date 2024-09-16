@@ -1,6 +1,7 @@
 @model Fodun.Models.Dtos.RegistroUsuario
 
 @{
+    Layout = null;
     ViewData["Title"] = "Fodun Ingreso/Registro";
 }
 
@@ -21,42 +22,34 @@
                 <div class="form-column">
                     <div class="mb-3 text-start fw-bold">
                         <label for="NroDocumento" class="form-label">Número de Documento</label>
-                        <br>
-                        <input type="text" class="form-control" id="NroDocumento" asp-for="NroDocumento"
-                            placeholder="Ingrese su número de documento" />
+                        <input type="text" class="form-control" id="NroDocumento" asp-for="NroDocumento" placeholder="Ingrese su número de documento" />
                         <span asp-validation-for="NroDocumento" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3 text-start fw-bold">
                         <label for="Nombre" class="form-label">Nombre Completo</label>
-                        <br>
-                        <input type="text" class="form-control" id="Nombre" asp-for="Nombre"
-                            placeholder="Ingrese su nombre completo" />
+                        <input type="text" class="form-control" id="Nombre" asp-for="Nombre" placeholder="Ingrese su nombre completo" />
                         <span asp-validation-for="Nombre" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3 text-start fw-bold">
                         <label for="FechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-                        <br>
                         <input type="date" class="form-control" id="FechaNacimiento" asp-for="FechaNacimiento" />
                         <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3 text-start fw-bold">
                         <label for="Celular" class="form-label">Celular</label>
-                        <br>
-                        <input type="text" class="form-control" id="Celular" asp-for="Celular"
-                            placeholder="Ingrese su número de celular" />
+                        <input type="text" class="form-control" id="Celular" asp-for="Celular" placeholder="Ingrese su número de celular" />
                         <span asp-validation-for="Celular" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3 text-start fw-bold">
                         <label for="Email" class="form-label">Correo Electrónico</label>
-                        <br>
-                        <input type="email" class="form-control" id="Email" asp-for="Email"
-                            placeholder="Ingrese su correo electrónico" />
+                        <input type="email" class="form-control" id="Email" asp-for="Email" placeholder="Ingrese su correo electrónico" />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
+
                     <div class="mb-3 text-start fw-bold">
                         <label for="Departamento" class="form-label">Departamento</label>
                         <br>
@@ -64,6 +57,16 @@
                             placeholder="Ingrese su departamento" />
                         <span asp-validation-for="Departamento" class="text-danger"></span>
                     </div>
+<!--
+                    <div class="mb-3 text-start fw-bold">
+                        <label for="Departamento" class="form-label">Departamento</label>
+                        <select class="form-control" id="Departamento" asp-for="Departamento">
+                            <option value="">Seleccione su departamento</option>
+                         
+                        </select>
+                        <span asp-validation-for="Departamento" class="text-danger"></span>
+                    </div>
+-->
 
                     <div class="mb-3 text-start fw-bold">
                         <label for="Municipio" class="form-label">Municipio</label>
@@ -72,28 +75,32 @@
                             placeholder="Ingrese su municipio" />
                         <span asp-validation-for="Municipio" class="text-danger"></span>
                     </div>
+<!--
+                    <div class="mb-3 text-start fw-bold">
+                        <label for="Municipio" class="form-label">Municipio</label>
+                        <select class="form-control" id="Municipio" asp-for="Municipio">
+                            <option value="">Seleccione su municipio</option>
+                           
+                        </select>
+                        <span asp-validation-for="Municipio" class="text-danger"></span>
+                    </div>
+-->                    
 
                     <div class="mb-3 text-start fw-bold">
                         <label for="Barrio" class="form-label">Barrio</label>
-                        <br>
-                        <input type="text" class="form-control" id="Barrio" asp-for="Barrio"
-                            placeholder="Ingrese su barrio" />
+                        <input type="text" class="form-control" id="Barrio" asp-for="Barrio" placeholder="Ingrese su barrio" />
                         <span asp-validation-for="Barrio" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3 text-start fw-bold">
                         <label for="Direccion" class="form-label">Dirección</label>
-                        <br>
-                        <input type="text" class="form-control" id="Direccion" asp-for="Direccion"
-                            placeholder="Ingrese su dirección" />
+                        <input type="text" class="form-control" id="Direccion" asp-for="Direccion" placeholder="Ingrese su dirección" />
                         <span asp-validation-for="Direccion" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3 text-start fw-bold">
                         <label for="Telefono" class="form-label">Teléfono</label>
-                        <br>
-                        <input type="text" class="form-control" id="Telefono" asp-for="Telefono"
-                            placeholder="Ingrese su número de teléfono" />
+                        <input type="text" class="form-control" id="Telefono" asp-for="Telefono" placeholder="Ingrese su número de teléfono" />
                         <span asp-validation-for="Telefono" class="text-danger"></span>
                     </div>
                 </div>
@@ -102,12 +109,19 @@
                 <div class="form-column">
                     <div class="mb-3 text-start fw-bold">
                         <label for="Clave" class="form-label">Contraseña</label>
-                        <br>
-                        <input type="password" class="form-control" id="Clave" asp-for="Clave"
-                            placeholder="Ingrese su contraseña" />
+                        <input type="password" class="form-control" id="Clave" asp-for="Clave" placeholder="Ingrese su contraseña" />
                         <span asp-validation-for="Clave" class="text-danger"></span>
                     </div>
-
+<!--
+                    <div class="mb-3 text-start fw-bold">
+                        <label for="PreguntaClave" class="form-label">Pregunta de Seguridad</label>
+                        <select class="form-control" id="PreguntaClave" asp-for="PreguntaClave">
+                            <option value="">Seleccione una pregunta...</option>
+                        
+                        </select>
+                        <span asp-validation-for="PreguntaClave" class="text-danger"></span>
+                    </div>
+-->
                     <div class="mb-3 text-start fw-bold">
                         <label for="PreguntaClave" class="form-label">Pregunta de Seguridad</label>
                         <br>
@@ -116,14 +130,13 @@
                         <span asp-validation-for="PreguntaClave" class="text-danger"></span>
                     </div>
 
+
                     <div class="mb-3 text-start fw-bold">
                         <label for="RespuestaClave" class="form-label">Respuesta de Seguridad</label>
-                        <br>
-                        <input type="text" class="form-control" id="RespuestaClave" asp-for="RespuestaClave"
-                            placeholder="Ingrese su respuesta de seguridad" />
+                        <input type="text" class="form-control" id="RespuestaClave" asp-for="RespuestaClave" placeholder="Ingrese su respuesta de seguridad" />
                         <span asp-validation-for="RespuestaClave" class="text-danger"></span>
                     </div>
-                    <!--
+<!--
                     <div class="mb-3 text-start fw-bold">
                         <label for="AutorizaCorreo" class="form-label">¿Autoriza el envío al correo?</label>
                         <div>
@@ -132,7 +145,8 @@
                         </div>
                     </div>
 -->
-                    <!--
+
+<!--
 
                     <div class="mb-3 text-start fw-bold">
                         <label for="AutorizaCelular" class="form-label">¿Autoriza el envío al celular?</label>
@@ -142,9 +156,7 @@
                         </div>
                     </div>
 -->
-
-                    <!--
-
+<!--
                     <div class="mb-3 text-start fw-bold">
                         <label for="ConfirmarClave" class="form-label">Confirmar Contraseña</label>
                         <input type="password" class="form-control" id="ConfirmarClave" asp-for="ConfirmarClave" placeholder="Confirme su contraseña" />
@@ -156,9 +168,8 @@
 
             <div class="text-center mt-3">
                 <button type="submit" class="btn btn-success">Registrar Usuario</button>
-               
+                <button type="button" class="btn btn-danger">Cancelar</button>
             </div>
         </div>
     </form>
-     <a asp-controller="UsuariosView" asp-action="Login" >Volver</a>
 </div>

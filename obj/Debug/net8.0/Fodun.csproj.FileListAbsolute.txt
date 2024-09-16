@@ -292,3 +292,7 @@ C:\Users\yeifr\OneDrive\Escritorio\Fodun\obj\Debug\net8.0\refint\Fodun.dll
 C:\Users\yeifr\OneDrive\Escritorio\Fodun\obj\Debug\net8.0\Fodun.pdb
 C:\Users\yeifr\OneDrive\Escritorio\Fodun\obj\Debug\net8.0\Fodun.genruntimeconfig.cache
 C:\Users\yeifr\OneDrive\Escritorio\Fodun\obj\Debug\net8.0\ref\Fodun.dll
+C:\Users\yeifr\OneDrive\Escritorio\Fodun\bin\Debug\net8.0\Data\alojamiento.json
+C:\Users\yeifr\OneDrive\Escritorio\Fodun\bin\Debug\net8.0\Data\disponivilidad.json
+C:\Users\yeifr\OneDrive\Escritorio\Fodun\bin\Debug\net8.0\Data\sede.json
+C:\Users\yeifr\OneDrive\Escritorio\Fodun\bin\Debug\net8.0\Data\tarifa.json

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+/*using Microsoft.AspNetCore.Mvc;
 using Fodun.Models;
 using Fodun.Services;
 using Fodun.Data;
@@ -23,7 +23,7 @@ public class ReservasController : Controller
    public IActionResult Create()
 {
     // Cargar datos para el formulario
-    var model = new ReservaViewModel
+    var model = new Reserva
     {
         Alojamientos = _context.Alojamiento.ToList(),
         Tarifas = _context.Tarifas.ToList(),
@@ -93,3 +93,5 @@ public IActionResult CalcularReserva(ReservaViewModel model)
         return View(reservas);
     }
 }
+
+*/

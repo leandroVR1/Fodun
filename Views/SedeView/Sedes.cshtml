@@ -1,52 +1,71 @@
-@model IEnumerable<Fodun.Models.Sede>
+@model Fodun.Models.Dtos.DisponibilidadViewModel
+@{
+    ViewData["Title"] = "Fondo XYZ - Sistema de Reservas";
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sedes</title>
-    <link rel="stylesheet" href="~/css/SedeStyle.css" />
-</head>
-<body>
-    <div class="panel panel-default todo-panel">
-        <table class="table table-hover">
-            <thead>
-                <tr class="procesoReserva">
-                    <th colspan="6">Sedes Recreativas y Apartamentos</th>
-                </tr>
-                <tr>
-                    <th>Imagen</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Tipo</th>
-                    <th>Ubicación</th>
-                    <th>Seleccionar</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null && Model.Any())
-                {
-                    @foreach (var sede in Model)
-                    {
-                        <tr>
-                            <td><img src="ruta_de_imagen"></td>
-                            <td>@sede.Nombre</td>
-                            <td>@sede.Descripcion</td>
-                            <td>@sede.Tipo</td>
-                            <td>@sede.Ubicacion</td>
-                           <td><a class="button-select" href="@Url.Action("Create", "Reservas", new { sedeId = sede.SedeId })">Seleccionar</a></td>
-                        </tr>
-                    }
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="6">No se encontraron sedes.</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Bienvenido al Sistema de Reservas del Fondo XYZ</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <form asp-action="BuscarDisponibilidad" asp-controller="Reservas" method="post">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Buscar Disponibilidad</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label asp-for="FechaInicio">Fecha de Inicio</label>
+                            <input asp-for="FechaInicio" class="form-control" type="date" required />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FechaFin">Fecha de Fin</label>
+                            <input asp-for="FechaFin" class="form-control" type="date" required />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NumeroPersonas">Número de Personas</label>
+                            <input asp-for="NumeroPersonas" class="form-control" type="number" min="1" required />
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-block">Buscar Disponibilidad</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</body>
-</html>
+
+    <h2 class="text-center mb-4">Nuestras Sedes Recreativas</h2>
+    <div class="row">
+        @foreach (var sede in ViewBag.SedesRecreativas)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@sede.ImagenUrl" class="card-img-top" alt="@sede.Nombre">
+                    <div class="card-body">
+                        <h5 class="card-title">@sede.Nombre</h5>
+                        <p class="card-text">@sede.Descripcion</p>
+                        <a href="@Url.Action("DetallesSede", "Sedes", new { id = sede.Id })" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <h2 class="text-center mb-4 mt-5">Nuestros Apartamentos</h2>
+    <div class="row">
+        @foreach (var apartamento in ViewBag.Apartamentos)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@apartamento.ImagenUrl" class="card-img-top" alt="@apartamento.Nombre">
+                    <div class="card-body">
+                        <h5 class="card-title">@apartamento.Nombre</h5>
+                        <p class="card-text">@apartamento.Descripcion</p>
+                        <a href="@Url.Action("DetallesApartamento", "Apartamentos", new { id = apartamento.Id })" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

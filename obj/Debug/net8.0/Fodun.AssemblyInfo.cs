@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fodun")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d2d3240736593cbad512376e32d10466e9e8053")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e12e3bf5dca0c5c4a5b5524ef4364edd6ce5e76")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fodun")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fodun")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,71 +1,54 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Fodun.Models;
-using Microsoft.AspNetCore.Identity;
 
 namespace Fodun.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
-
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Reserva> Reservas { get; set; }
         public DbSet<Sede> Sedes { get; set; }
+        public DbSet<Alojamiento> Alojamientos { get; set; }
+        public DbSet<Habitacion> Habitaciones { get; set; }
+        public DbSet<Comodidad> Comodidades { get; set; }
+        public DbSet<Servicio> Servicios { get; set; }
         public DbSet<Tarifa> Tarifas { get; set; }
-        public DbSet<Disponibilidad> Disponibilidades { get; set; }
-        public DbSet<Alojamiento> Alojamiento { get; set; }
-        public DbSet<Imagen> Imagenes { get; set; }
+        public DbSet<Reserva> Reservas { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Disponibilidad>()
-                .HasOne(d => d.Alojamiento)
-                .WithMany(a => a.Disponibilidades)
-                .HasForeignKey(d => d.AlojamientoId);
-
-            modelBuilder.Entity<Reserva>()
-                .HasOne(r => r.Alojamiento)
-                .WithMany(a => a.Reservas)
-                .HasForeignKey(r => r.AlojamientoId);
-
-            modelBuilder.Entity<Reserva>()
-                .HasOne(r => r.Usuario)
-                .WithMany(u => u.Reservas)
-                .HasForeignKey(r => r.UsuarioId);
-
-            modelBuilder.Entity<Alojamiento>()
-                .HasOne(a => a.Sede)
-                .WithMany(s => s.Alojamientos)
+            modelBuilder.Entity<Sede>()
+                .HasMany(s => s.Alojamientos)
+                .WithOne(a => a.Sede)
                 .HasForeignKey(a => a.SedeId);
 
-            modelBuilder.Entity<Tarifa>()
-                .HasOne(t => t.Sede)
-                .WithMany(s => s.Tarifas)
-                .HasForeignKey(t => t.SedeId);
+            modelBuilder.Entity<Alojamiento>()
+                .HasMany(a => a.Habitaciones)
+                .WithOne(h => h.Alojamiento)
+                .HasForeignKey(h => h.AlojamientoId);
 
-            modelBuilder.Entity<Tarifa>()
-                .HasOne(t => t.Alojamiento)
-                .WithMany(a => a.Tarifas)
-                .HasForeignKey(t => t.AlojamientoId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Alojamiento>()
+                .HasMany(a => a.Comodidades)
+                .WithMany();
+
+            modelBuilder.Entity<Alojamiento>()
+                .HasMany(a => a.Tarifas)
+                .WithOne(t => t.Alojamiento)
+                .HasForeignKey(t => t.AlojamientoId);
+
+            modelBuilder.Entity<Sede>()
+                .HasMany(s => s.Servicios)
+                .WithMany();
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(u => u.Reservas)
+                .WithOne(r => r.Usuario)
+                .HasForeignKey(r => r.UsuarioId);
 
             modelBuilder.Entity<Reserva>()
-                .Property(r => r.LavanderiaCosto)
-                .HasColumnType("decimal(18,2)");
+            .HasOne(r => r.Alojamiento)
+            .WithMany(a => a.Reservas)
+            .HasForeignKey(r => r.AlojamientoId);
 
-            modelBuilder.Entity<Reserva>()
-                .Property(r => r.TarifaPorNoche)
-                .HasColumnType("decimal(18,2)");
-
-            modelBuilder.Entity<Reserva>()
-                .Property(r => r.TotalPagar)
-                .HasColumnType("decimal(18,2)");
         }
     }
 }

@@ -18,5 +18,9 @@ namespace Fodun.Models
         public decimal LavanderiaCosto { get; set; }
         public decimal ValorTotal { get; set; }
         public Sede Sede { get; set; }
+
+        public List<Temporada> Temporadas { get; set; }
+        public decimal TarifaOrdinaria { get; set; }
+        public decimal TarifaEspecial { get; set; }
     }
 }

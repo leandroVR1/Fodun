@@ -16,6 +16,8 @@ namespace Fodun.Models
         public ICollection<Disponibilidad> Disponibilidades { get; set; }
         public ICollection<Reserva> Reservas { get; set; }
         public ICollection<Tarifa> Tarifas { get; set; } = new List<Tarifa>();
+        public List<string> Servicios { get; set; }
+        
 
         // Métodos para obtener tarifas según la temporada
 public decimal ObtenerTarifaOrdinaria()

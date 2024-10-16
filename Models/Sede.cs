@@ -17,5 +17,8 @@ namespace Fodun.Models
 
         public ICollection<Imagen> Imagenes { get; set; }  // Imágenes relacionadas con la sede
 
+        public List<string> Servicios { get; set; } // Para listar servicios como piscina, gimnasio, etc.
+public string Politicas { get; set; } // Para almacenar políticas de la sede
+
     }
 }

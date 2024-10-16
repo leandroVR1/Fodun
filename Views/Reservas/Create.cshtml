@@ -2,128 +2,153 @@
 
 <head>
     <link rel="stylesheet" href="~/css/ReservaStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
-<form asp-action="Create" asp-controller="Reservas" method="post">
-    <div class="form-container">
-        <div class="form-content">
-            <div class="form-left">
-                <h3>Mis Fechas</h3>
-                <div class="form-group">
-                    <label for="FechaInicio">Fecha de Llegada</label>
-                    <input asp-for="FechaInicio" type="date" id="FechaInicio" class="form-control" required />
-                    <span asp-validation-for="FechaInicio" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="FechaFin">Fecha de Salida</label>
-                    <input asp-for="FechaFin" type="date" id="FechaFin" class="form-control" required />
-                    <span asp-validation-for="FechaFin" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="Noches">Noches</label>
-                    <input asp-for="Noches" type="number" id="Noches" class="form-control" min="1" required />
-                    <span asp-validation-for="Noches" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="NumeroPersonas">Personas</label>
-                    <input asp-for="NumeroPersonas" type="number" id="NumeroPersonas" class="form-control" min="1" required />
-                    <span asp-validation-for="NumeroPersonas" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="Lavanderia">Servicio de Lavandería</label>
-                    <input asp-for="Lavanderia" type="checkbox" id="Lavanderia" class="form-control-checkbox" />
-                </div>
 
-                <h3>Total Reserva</h3>
-                <div class="form-group">
-                    <label for="NumeroHabitaciones">Habitaciones</label>
-                    <input asp-for="NumeroHabitaciones" type="number" id="NumeroHabitaciones" class="form-control" readonly />
-                </div>
-                <div class="form-group">
-                    <label for="TarifaOrdinaria">Tarifa Día Ordinario</label>
-                    <input type="number" id="TarifaOrdinaria" class="form-control" value="0" />
-                </div>
-                <div class="form-group">
-                    <label for="TarifaEspecial">Tarifa Día Especial</label>
-                    <input type="number" id="TarifaEspecial" class="form-control" value="0" />
-                </div>
-                <div class="form-group">
-                    <label for="LavanderiaCosto">Lavandería</label>
-                    <input asp-for="LavanderiaCosto" type="number" id="LavanderiaCosto" class="form-control" readonly />
-                </div>
-                <div class="form-group">
-                    <label for="ValorTotal">Valor Total</label>
-                    <input asp-for="ValorTotal" type="text" id="ValorTotal" class="form-control" readonly />
-                </div>
-                <button type="submit" class="btn-reservar">Reservar</button>
-            </div>
+<div class="main-container">
+    <h1>Sedes Recreativas y Apartamentos</h1>
+    <div class="tabs">
+        <div class="tab active">Sedes Recreativas y Apartamentos</div>
+        <div class="tab">Seleccione sus Fechas</div>
+    </div>
 
-            <div class="form-right">
-                @if (Model.Sede != null)
-                {
-                    <h3>@Model.Sede.Nombre</h3>
-                    <div class="sede-description">
-                        <img src="@Model.Sede.Imagenes.FirstOrDefault()?.Url" alt="Imagen Sede Recreativa" class="sede-image" />
-                        <p>@Model.Sede.Descripcion</p>
-                        <div class="image-gallery">
-                            @foreach (var imagen in Model.Sede.Imagenes)
-                            {
-                                <img src="@imagen.Url" alt="Imagen de la Sede" class="gallery-image" />
-                            }
+    <div class="content-container">
+        <div class="left-column">
+            <form asp-action="Create" asp-controller="Reservas" method="post">
+                <div class="section">
+                    <h3>Mis Fechas</h3>
+                    <div class="form-group">
+                        <label for="FechaInicio">Fecha de Llegada:</label>
+                        <div class="input-with-icon">
+                            <input asp-for="FechaInicio" type="date" id="FechaInicio" required />
+                            <i class="fas fa-calendar-alt"></i>
                         </div>
                     </div>
-                }
-                else
-                {
-                    <p>Sede no disponible.</p>
-                }
-            </div>
+                    <div class="form-group">
+                        <label for="FechaFin">Fecha de Salida:</label>
+                        <div class="input-with-icon">
+                            <input asp-for="FechaFin" type="date" id="FechaFin" required />
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Noches">Noches:</label>
+                        <select asp-for="Noches" id="Noches" required>
+                            @for (int i = 1; i <= 30; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="NumeroPersonas">Personas:</label>
+                        <select asp-for="NumeroPersonas" id="NumeroPersonas" required>
+                            @for (int i = 1; i <= 10; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Lavanderia">Servicio de Lavandería:</label>
+                        <input asp-for="Lavanderia" type="checkbox" id="Lavanderia" />
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Total Reserva</h3>
+                    <div class="form-group">
+                        <label for="NumeroHabitaciones">Habitaciones:</label>
+                        <input asp-for="NumeroHabitaciones" type="text" id="NumeroHabitaciones" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label for="DiasOrdinarios">Días Ordinarios:</label>
+                        <input type="text" id="DiasOrdinarios" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label for="DiasEspeciales">Días Especiales:</label>
+                        <input type="text" id="DiasEspeciales" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label for="LavanderiaCosto">Lavandería:</label>
+                        <input asp-for="LavanderiaCosto" type="text" id="LavanderiaCosto" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label for="ValorTotal">Valor Total:</label>
+                        <input asp-for="ValorTotal" type="text" id="ValorTotal" readonly />
+                    </div>
+                    <button type="submit" class="btn-reservar">Reservar</button>
+                </div>
+            </form>
         </div>
 
-        <div class="table-container">
-            <h3>Habitaciones / Alojamientos</h3>
-            <table class="table-habitaciones">
-                <thead>
-                    <tr>
-                        <th>Detalles</th>
-                        <th>Habitación / Alojamiento</th>
-                        <th>Capacidad</th>
-                        <th>Tarifa día Ordinario</th>
-                        <th>Tarifa día Especial</th>
-                        <th>Disponibilidad Fecha Seleccionada</th>
-                        <th>Ver Calendario Disponibilidad</th>
-                        <th>Reservar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var alojamiento in Model.Alojamientos)
-                    {
+        <div class="right-column">
+            @if (Model.Sede != null)
+            {
+                <h2>Sede Recreativa @Model.Sede.Nombre</h2>
+                <div class="sede-info">
+                    <img src="@Model.Sede.Imagenes.FirstOrDefault()?.Url" alt="Imagen Sede Recreativa" class="sede-image-main" />
+                    <div class="image-gallery">
+                        @foreach (var imagen in Model.Sede.Imagenes.Skip(1).Take(4))
+                        {
+                            <img src="@imagen.Url" alt="Imagen de la Sede" class="gallery-image" />
+                        }
+                    </div>
+                    <p>@Model.Sede.Descripcion</p>
+                    <a href="#" class="btn-download"><i class="fas fa-download"></i> Descargar ruta de llegada</a>
+                </div>
+            }
+            else
+            {
+                <p>Sede no disponible.</p>
+            }
+
+            <div class="table-container">
+                <h3>Habitaciones / Alojamientos</h3>
+                <table class="table-habitaciones">
+                    <thead>
                         <tr>
-                            <td><i class="fas fa-search"></i></td>
-                            <td>@alojamiento.NumeroHabitaciones</td>
-                            <td>@alojamiento.CapacidadMaxima</td>
-                            <td>@alojamiento.ObtenerTarifaOrdinaria()</td>
-                            <td>@alojamiento.ObtenerTarifaEspecial()</td>
-                            <td>
-                                @if (alojamiento.VerificarDisponibilidad(Model.FechaInicio, Model.FechaFin))
-                                {
-                                    <i class="fas fa-check disponibilidad-icon"></i>
-                                }
-                                else
-                                {
-                                    <i class="fas fa-times disponibilidad-icon"></i>
-                                }
-                            </td>
-                            <td><a href="@Url.Action("VerCalendario", new { id = alojamiento.AlojamientoId })"><i class="fas fa-calendar-alt"></i></a></td>
-                            <td>
-                                <input type="checkbox" name="ReservarHabitacion" value="@alojamiento.AlojamientoId" class="checkbox-habitacion" />
-                            </td>
+                            <th>Detalles</th>
+                            <th>Habitación / Alojamiento</th>
+                            <th>Capacidad</th>
+                            <th>Tarifa día Ordinario</th>
+                            <th>Tarifa día Especial</th>
+                            <th>Disponibilidad Fecha Seleccionada</th>
+                            <th>Ver Calendario Disponibilidad</th>
+                            <th>Reservar</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var alojamiento in Model.Alojamientos)
+                        {
+                            <tr>
+                                <td><i class="fas fa-search"></i></td>
+                                <td>@alojamiento.NumeroHabitaciones</td>
+                                <td>@alojamiento.CapacidadMaxima</td>
+                                <td>@alojamiento.ObtenerTarifaOrdinaria().ToString("C")</td>
+                                <td>@alojamiento.ObtenerTarifaEspecial().ToString("C")</td>
+                                <td>
+                                    @if (alojamiento.VerificarDisponibilidad(Model.FechaInicio, Model.FechaFin))
+                                    {
+                                        <i class="fas fa-check disponibilidad-icon"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="fas fa-times disponibilidad-icon"></i>
+                                    }
+                                </td>
+                                <td><a href="@Url.Action("VerCalendario", new { id = alojamiento.AlojamientoId })"><i class="fas fa-calendar-alt"></i></a></td>
+                                <td>
+                                    <input type="checkbox" name="ReservarHabitacion" value="@alojamiento.AlojamientoId" class="checkbox-habitacion" />
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</form>
+</div>
 @section Scripts {
     <script src="~/js/ReservaScript.js"></script>
     <partial name="_ValidationScriptsPartial" />

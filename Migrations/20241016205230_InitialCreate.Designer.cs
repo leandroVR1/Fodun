@@ -4,6 +4,7 @@ using Fodun.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fodun.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241016205230_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,10 +45,6 @@ namespace Fodun.Migrations
 
                     b.Property<int>("SedeId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Servicios")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("TipoAlojamiento")
                         .IsRequired()
@@ -182,14 +181,6 @@ namespace Fodun.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Politicas")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Servicios")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Tipo")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -225,9 +216,6 @@ namespace Fodun.Migrations
 
                     b.Property<int>("SedeId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("TarifaEspecial")
-                        .HasColumnType("decimal(65,30)");
 
                     b.Property<double>("TarifaPorNoche")
                         .HasColumnType("double");

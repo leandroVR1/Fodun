@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\buildMultiTargeting\Fodun.props" />
+  <Import Project="../buildMultiTargeting/Fodun.props" />
 </Project>

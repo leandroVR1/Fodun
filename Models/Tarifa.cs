@@ -16,6 +16,7 @@ public class Tarifa
     public double TarifaPorNoche { get; set; }
     public DateTime FechaInicio { get; set; }
     public DateTime FechaFin { get; set; }
+    public decimal TarifaEspecial { get; set; }
 
     public Sede Sede { get; set; }
     public Alojamiento Alojamiento { get; set; }
